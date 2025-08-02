@@ -149,20 +149,24 @@ onMounted(() => {
                 </div>
 
                 <v-row v-if="!loading && !error">
-                    <v-col v-for="post in posts" :key="post.id" cols="12" md="6" lg="4">
-                        <v-card :href="post.url" target="_blank" class="h-full flex flex-col rounded-md">
-                            <v-img :src="post.cover_image || 'https://placehold.co/600x400/e2e8f0/e2e8f0?text=.'" height="200px" cover></v-img>
-                            <v-card-title class="font-bold">{{ post.title }}</v-card-title>
-                            <v-card-text class="flex-grow">{{ post.description }}</v-card-text>
-                            <v-card-actions class="p-4">
-                                <v-chip v-for="tag in post.tag_list" :key="tag" small class="mr-2 mb-2">#{{tag}}</v-chip>
-                                <v-spacer></v-spacer>
-                                <v-icon small>mdi-heart</v-icon>
-                                <span class="text-sm ml-1">{{ post.public_reactions_count }}</span>
-                            </v-card-actions>
-                        </v-card>
-                    </v-col>
-                </v-row>
+                        <v-col v-for="post in posts" :key="post.id" cols="12" md="6" lg="4">
+                            <v-card :href="post.url" target="_blank" class="h-full flex flex-col">
+                                <v-img :src="post.cover_image || 'https://placehold.co/600x400/e2e8f0/e2e8f0?text=.'" height="200px" cover></v-img>
+                                <v-card-title class="font-bold">{{ post.title }}</v-card-title>
+                                <v-card-text class="flex-grow">{{ post.description }}</v-card-text>
+                                <v-card-actions class="p-4">
+                                    <div class="d-flex flex-wrap ga-2">
+                                        <v-chip v-for="tag in post.tag_list" :key="tag" size="small">#{{tag}}</v-chip>
+                                    </div>
+                                    <v-spacer></v-spacer>
+                                    <div class="d-flex align-center">
+                                        <v-icon size="small">mdi-heart</v-icon>
+                                        <span class="text-sm ml-1">{{ post.public_reactions_count }}</span>
+                                    </div>
+                                </v-card-actions>
+                            </v-card>
+                        </v-col>
+                    </v-row>
             </v-container>
         </section>
 
