@@ -126,7 +126,7 @@ onMounted(() => {
             <v-container class="mx-auto">
                 <h2 class="section-title text-center">My Specialties</h2>
                 <div class="max-w-4xl mx-auto text-center">
-                    <v-chip v-for="skill in skills" :key="skill" style="margin: 0.25rem" color="indigo" label size="large">
+                    <v-chip v-for="skill in skills" :key="skill" style="margin: 0.4rem" color="indigo" label size="large">
                         {{ skill }}
                     </v-chip>
                 </div>
@@ -184,6 +184,9 @@ onMounted(() => {
                     </v-btn>
                     <v-btn href="https://linkedin.com/in/mazdak-parniandg" target="_blank" class="mx-2" icon>
                         <v-icon>mdi-linkedin</v-icon>
+                    </v-btn>
+                    <v-btn href="https://dev.to/purejoymind" target="_blank" class="mx-2" icon>
+                        <v-icon>mdi-dev-to</v-icon>
                     </v-btn>
                 </div>
                 <p class="text-gray-500 text-sm">&copy; {{ new Date().getFullYear() }} Mazdak Parnian Dargahi. All Rights Reserved.</p>
